@@ -1,0 +1,19 @@
+body {
+    background-color:darkolivegreen;
+    text-align: center;
+    font-family: Helvetica, impact, 'Times New Roman';
+ }
+
+h1, main {
+    background-color: darkgreen;
+    color: rgb(224, 228, 193)
+ }
+.container{
+    display: flex;
+    align-items: center;
+    ;
+}
+.container img {
+    max-width: 50%; 
+    height: auto; 
+  }
