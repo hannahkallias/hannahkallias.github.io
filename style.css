@@ -1,19 +1,34 @@
-body {
-    background-color:darkolivegreen;
-    text-align: center;
+#pagebody {
+    background-color:#556b2f;
     font-family: Helvetica, impact, 'Times New Roman';
  }
 
 h1, main {
-    background-color: darkgreen;
-    color: rgb(224, 228, 193)
+    padding: 15px;
+    background-color:rgb(102, 107, 93);
+    color: #e0e4c1
+
  }
 .container{
     display: flex;
     align-items: center;
-    ;
+    padding: 10px;
 }
 .container img {
     max-width: 50%; 
-    height: auto; 
+    height:fit-content; 
+    margin-right: 10px;
   }
+.centertext{
+    text-align: center;
+}
+#conditions {
+    color:azure;
+}
+
+.triImage img {
+    max-width: 50%; 
+    height:fit-content; 
+    margin-right: 10px;
+  }
+

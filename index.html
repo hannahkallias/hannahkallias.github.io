@@ -6,26 +6,63 @@
         <meta name="viewport" content="width=divice-width, initial-scale=1.0">
         <title>Hannah Kallias's Portfolio</title>
         <link rel = "stylesheet" href="style.css">
+        <style> body{background-color:#556b2f;} </style>
 
         
     </head>
-    <body>
-        <h1>Hannah Kallias's Portfolio</h1>
+    <body id="pageBody">
+        <h1 class="centertext">Hannah Kallias's Portfolio</h1>
         <div class="container">
             <img src="paths/100_0234.jpg" alt="">
-            <p>Hello! My name is Hannah Kallias and I am a freshman on the
+            <p id="para">Hello! My name is Hannah Kallias and I am a freshman on the
                 Weber State Womens Soccer team. My major is Computer Science.
                 I was born in California, Idaho, North Dakota, South Dakota, and Utah. 
                 I also really enjoy hiking, drawing, and trail runs in my free time. 
                 I am developing this portfolio website to primarily to showcase my JavaScript projects. </p>
         </div>
 
-        <main>
+        <main id=>
             <section id="future-projects">
-                <h2>JavaScript Projects</h2>
-                <p>Stay tuned for exciting upcoming demonstrations of javascript. </p>
+                <h2 class="centertext">JavaScript Projects</h2>
+                <a class ="centertext" href="arithmatic.html">Lab: Shape Area and Volume Calculator</a>
             </section>
         </main>
-        <p>&copy; Copyright 2025 Hannah E. Kallias. All rights reserved.</p>
+        
+
+        <h2> Settings</h2>
+        <p id="conditions"> Current Settings </p>
+        <button onclick="defaultFunction()">Default</button>
+        <button onclick="darkFunction()">Dark</button>
+        <button onclick="lightFunction()">Light</button>
+
+
+        <script>
+            function lightFunction() {
+                document.getElementById('conditions').innerHTML = "Current Settings: Light";
+                document.getElementById('conditions').style.color = "#000000";
+                document.getElementById('pageBody').style = "background-color: #e0e4c1";
+                document.getElementById('para').style.color = "#000000"
+            
+            }
+            function defaultFunction() {
+                document.getElementById('conditions').innerHTML = "Current Settings: Default";
+                document.getElementById('pageBody').style = "background-color: #556b2f";
+                
+                
+            }
+            function darkFunction() {
+                document.getElementById('conditions').innerHTML = "Current Settings: Dark";
+                document.getElementById('pageBody').style = "background-color: #373a33";
+                document.getElementById('para').style.color = "#e0e4c1"
+                document.getElementById('conditions').style.color = "#e0e4c1";
+            }
+
+        </script>
+
+
+        <p class="centertext">&copy; Copyright 2025 Hannah E. Kallias. All rights reserved.</p>
+
+
+        
     </body>
 </html>
