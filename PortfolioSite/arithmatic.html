@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href="style.css">
+   
+</head>
+    <body>
+        <div class = "triImage">
+        <h2>Perimeter</h2>
+        <img src="paths/IMG_5520.jpg" alt="">
+            <p>Result: <span id='perimeterResult'></span></p>
+            <p><label for='triSide1'>triangle side 1: </label><input type='text' id='triSide1'></p>
+            <p><label for='triSide2'>triangle side 2: </label><input type='text' id='triSide2'></p>
+            <p><label for='triSide3'>triangle side 3: </label><input type='text' id='triSide3'></p>	
+            <button onclick='perimeter()'>calculate</button>
+            
+            <br><br><hr>
+
+        <h2>Area</h2>
+        <img src="paths/IMG_5521.jpg" alt="">
+            <p>Result: <span id='areaResult'></span></p>
+            <p><label for='base'>Base of triangle: </label><input type='text' id='base'></p>
+            <p><label for='height'>Height of triangle: </label><input type='text' id='height'></p>	
+            <button onclick='area()'>calculate</button>
+            
+            <br><br><hr>
+
+        <h2>Volume of Rectangular Pyramid</h2>
+        <img src="paths/IMG_5522.jpg" alt="">
+            <p>Result: <span id='volumeResult'></span></p>
+            <p><label for='length'>Length of triangle: </label><input type='text' id='length'></p>
+            <p><label for='width'>Width of triangle: </label><input type='text' id='width'></p>
+            <p><label for='volHeight'>Height of triangle: </label><input type='text' id='volHeight'></p>	
+            <button onclick='volume()'>calculate</button>
+            
+            <br><br><hr>
+    </div>
+
+
+
+        <script>
+            function perimeter() {
+				let triSide1 = document.getElementById('triSide1').value;
+				let triSide2 = document.getElementById('triSide2').value;
+                let triSide3 = document.getElementById('triSide3').value;
+				
+				let result = Number(triSide1) + Number(triSide2) + Number(triSide3);
+				document.getElementById('perimeterResult').innerHTML = result;
+			}
+
+            function area() {
+				let base = document.getElementById('base').value;
+				let height = document.getElementById('height').value;
+				
+				let result = (Number(base) * Number(height))/2; 
+				document.getElementById('areaResult').innerHTML = result;
+			}
+
+            function volume() {
+				let length = document.getElementById('length').value;
+                let width = document.getElementById('width').value;
+				let volHeight = document.getElementById('volHeight').value;
+				
+				let result = (Number(length) * Number(width) * Number(volHeight))/3; 
+				document.getElementById('volumeResult').innerHTML = result;
+			}
+        </script>
+    </body>
+</html>
