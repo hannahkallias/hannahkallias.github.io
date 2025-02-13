@@ -36,6 +36,8 @@ let xTurn = true;
 
             let outputString = "";
 
+            //i know this code is so repetitive but thats what the startup had. 
+
             if (a1 == b1 && b1 == c1 && a1 == "X") {
                 outputString = "X wins";
             }

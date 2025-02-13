@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data Entry</h1>
+    <h2>Dice Tester</h2>
+	<label for='value'>Enter a value: </label>
+	<input type='text' id='numberValue'>
+    <button onclick="addValue()">Add Value</button>
+    <button onclick="removeValue()">Remove Value</button>
+
+    <h3>Current Dataset</h3>
+    <div id='valueOutput'></div>
+
+    <h3>Current mean</h3>
+    <div id='meanOutput'>Mean: </div>
+
+    <script>
+        let numberset = []
+       
+
+        function addValue(){
+            let input = document.getElementById('numberValue').value;
+            let number = parseFloat(input);
+            
+
+            if(isNaN(number)) 
+                alert('Invalid entry.');
+            else{
+                numberset.push(number);
+                updateDisplay();
+            }
+        
+            document.getElementById('numberValue').value = '';
+            
+
+        }
+
+        function removeValue(){
+            let input = document.getElementById('numberValue').value;
+            let number = parseFloat(input);
+
+            if(isNaN(number)) 
+                alert('Invalid entry.');
+            else{
+                let index = numberset.indexOf(number);
+                if (index === -1) {
+                    alert( number + ' not found in the numberset.');
+                }
+                else {
+                    numberset.splice(index, 1);
+                    updateDisplay();
+                }
+            }
+        
+            document.getElementById('numberValue').value = '';
+            
+        }
+        function updateDisplay() {
+            let valueOutput = document.getElementById('valueOutput');
+            valueOutput.innerHTML = numberset.join();  
+
+
+            computeMean();
+        }
+
+        function computeMean() {
+            if (numberset.length === 0) {
+                document.getElementById('meanOutput').textContent = 'Mean: ';
+                return;
+            }
+
+            let sum = 0;
+            for (let i = 0; i < numberset.length; i++) {
+                sum += numberset[i];
+            }
+            let mean = sum / numberset.length;
+            document.getElementById('meanOutput').textContent = 'Mean: ' + mean;
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
