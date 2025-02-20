@@ -3,7 +3,13 @@
     font-family: Helvetica, impact, 'Times New Roman';
  }
 
-h1, main {
+h1 {
+    padding: 15px;
+    background-color:rgb(102, 107, 93);
+    color: #e0e4c1
+
+ }
+ #lowline {
     padding: 15px;
     background-color:rgb(102, 107, 93);
     color: #e0e4c1
