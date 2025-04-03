@@ -23,7 +23,7 @@
     </form>
     <ul id="task-list"></ul>
     <h3>Tasks Added This Session: <span id="task-count">0</span></h3>
-    <button id="theme-toggle">Toggle Dark Mode</button>
+    <button id="theme-toggle">Toggle Dark/Light Mode</button>
 
     <h3>Motivational Quote</h3>
     <p id="quote-text">Click the button to get a quote!</p>
@@ -67,12 +67,21 @@
             function renderTasks() {
                 taskList.innerHTML = ""; 
                 const tasks = getTasks();
-                tasks.forEach((task, index) => {
+                tasks.forEach(function(task, index) {
                     const li = document.createElement("li");
-                    li.innerHTML = `${task} <button onclick="removeTask(${index})">X</button>`;
+                    li.textContent = task + " ";
+                    
+                    const button = document.createElement("button");
+                    button.textContent = "X";
+                    button.addEventListener("click", function() {
+                        removeTask(index);
+                    });
+
+                    li.appendChild(button);
                     taskList.appendChild(li);
                 });
             }
+
 
             window.removeTask = function(index) {
                 let tasks = getTasks();
@@ -97,12 +106,15 @@
                 taskCountDisplay.textContent = count;
             }
 
-            // Theme toggle
             function setTheme(theme) {
                 document.body.classList.remove("light-mode", "dark-mode");
                 document.body.classList.add(theme);
-                document.cookie = `theme=${theme}; path=/; max-age=31536000`; // 1 year
+                let date = new Date();
+                date.setTime(date.getTime() + (24 * 60 * 60 * 1000)); 
+                document.cookie = "theme=" + theme + "; expires=" + date.toUTCString() + "; path=/";
+                            
             }
+
 
             function getThemeFromCookies() {
                 const cookies = document.cookie.split("; ");
@@ -130,13 +142,14 @@
                         throw new Error("Failed to fetch quote.");
                     }
                     const data = await response.json();
-                    quoteText.textContent = `"${data.content}" — ${data.author}`;
+                    quoteText.textContent = '"' + data.content + '" — ' + data.author;
                 } catch (error) {
                     quoteText.textContent = "Could not load a quote. Please try again!";
                 }
             }
 
             fetchQuoteButton.addEventListener("click", fetchQuote);
+
         });
     </script>
 </body>
