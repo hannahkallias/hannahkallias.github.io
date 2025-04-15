@@ -19,6 +19,7 @@
     "image": "paths/10Things.jpg"
   }
 ]`;
+// all of my images are from the creative commons google settings!
 
   class Movie {
     #price;
