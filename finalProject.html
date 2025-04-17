@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project</title>
+    <style>
+        body {
+            background-color:#cbcfd2 ;
+
+        }
+        h1, h2, div {
+            color: #1c3464;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <form>
-        <label for="currentDate"> Current Date:</label><br>
-		<input type="text" id = "currentDate" name = "currentDate" 
-        placeholder="MM-DD-YY" pattern="[0-9]" title = "please enter numbers only"><br>
-
-        <label for="fvalue">Enter your current value of money:</label><br>
-        <input type="text" id="fvalue" name="fvalue"><br>
-
-        <label for = "expense"> Amount taken from your current value: </label><br>
-        <input type="text" id="expense" name="expense"><br><br>
-
-        <button type="submit">Submit</button>
-        
-    </form>
-    <script src = "finalproject.js"></script>
+    <h1>Budget Tracker</h1>
+    <div>
+      <input id="amount" type="number" placeholder="Amount" /> <br><br>
+      <input id="year" type="number" placeholder="Year" /> <br><br>
+      <input id="month" type="number" placeholder="Month (1-12)" /> <br><br>
+      <input id="day" type="number" placeholder="Day" /> <br><br>
+      <button id="addBtn">Add Transaction</button> <br><br>
+    </div>
+    <h2>Transactions:</h2>
+    <div id="transactionList"></div>
+    <h2>Balance: $<span id="balance">0</span></h2>
+  
+    <script src="finalProject.js"></script>
 </body>
 </html>
+  
